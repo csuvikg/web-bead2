@@ -14,20 +14,46 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139229769-2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
+
         gtag('js', new Date());
         gtag('config', 'UA-139229769-2');
     </script>
 </head>
 <body>
-<!-- Navbar goes here -->
-
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="navbar-brand fas fa-heartbeat"></div>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01"
+            aria-controls="navbarColor01" aria-expanded="false" aria-label="Navigációs sáv nyitása-csukása">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbarColor01" style="">
+        <form class="form-inline my-2 my-lg-0 col-sm-12 col-md-8">
+            <input class="form-control mr-sm-4 col-sm-12 col-md-8" type="text" placeholder="Keresés saját cím alapján">
+            <button class="btn btn-secondary my-2" type="submit">Keresés</button>
+        </form>
+        <ul class="navbar-nav pl-3">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Kereső<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Infóbázis</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Intézmény ajánlása</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
