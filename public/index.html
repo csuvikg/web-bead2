@@ -31,7 +31,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="navbar-brand fas fa-heartbeat"></div>
+    <div class="navbar-brand fas fa-heartbeat pl-3"></div>
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01"
             aria-controls="navbarColor01" aria-expanded="false" aria-label="Navigációs sáv nyitása-csukása">
         <span class="navbar-toggler-icon"></span>
@@ -54,16 +54,69 @@
         </ul>
     </div>
 </nav>
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-    <div class="container">
-        <h1>Kereső</h1>
-        <p>Készülőben</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Teszt</a></p>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron-fluid col-sm-12 col-md-7 col-lg-6 col-xl-5">
+            <button class="btn btn-primary mt-4 mb-0 mx-4" type="button" data-toggle="collapse" data-target="#filter" aria-expanded="false" aria-controls="filter">
+                Szűrők
+            </button>
+            <div class="form-group py-0 px-4 collapse" id="filter">
+                <label class="col-form-label pb-0 px-2" for="serviceArea">Ellátási körzet:</label>
+                <select class="form-control custom-select px-2 font-weight-bold" id="serviceArea">
+                    <option value="0">Mind</option>
+                    <option value="1">Helyi</option>
+                    <option value="2">Területi</option>
+                    <option value="3">Országos</option>
+                </select>
+                <label class="col-form-label pb-0 px-2" for="careType">Ellátási forma:</label>
+                <select class="form-control custom-select px-2 font-weight-bold" id="careType">
+                    <option value="0">Mind</option>
+                    <option value="1">Pszichiátriai gondozó</option>
+                    <option value="2">Pszichiátriai ambulancia</option>
+                    <option value="3">Pszichiátriai fekvőbeteg ellátás</option>
+                    <option value="4">Családsegítő szolgálat</option>
+                    <option value="5">Nevelési tanácsadó</option>
+                    <option value="6">Krízisintervenciós osztály</option>
+                </select>
+                <label class="col-form-label pb-0 px-2" for="targetGroup">Célcsoport:</label>
+                <select class="form-control custom-select px-2 font-weight-bold" id="targetGroup">
+                    <option value="0">Mind</option>
+                    <option value="1">Gyermek</option>
+                    <option value="2">Kamasz és serdülő</option>
+                    <option value="3">Felnőtt</option>
+                    <option value="4">Pár- és család</option>
+                    <option value="5">Időskorúak</option>
+                </select>
+                <label class="col-form-label pb-0 px-2" for="financing">Finanszírozás:</label>
+                <select class="form-control custom-select px-2 font-weight-bold" id="financing">
+                    <option value="0">Mind</option>
+                    <option value="1">Állami</option>
+                    <option value="2">Önköltséges</option>
+                </select>
+                <div class="custom-control custom-checkbox my-4 mx-2">
+                    <input type="checkbox" class="custom-control-input" id="referral">
+                    <label class="custom-control-label" for="referral">Nem beutalóköteles</label>
+                </div>
+                <div class="custom-control custom-checkbox my-4 mx-2">
+                    <input type="checkbox" class="custom-control-input" id="alwaysOpen">
+                    <label class="custom-control-label" for="alwaysOpen">Ügyelet</label>
+                </div>
+            </div>
+            <div class="container p-4">
+                <h2>71 Találat</h2>
+                <p>Készülőben</p>
+            </div>
+        </div>
+
+        <div class="embed-responsive col-sm-12 col-md-5 col-lg-6 col-xl-7">
+            <div id="map" class="embed-responsive-item"></div>
+        </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container pt-5">
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-md-4">
@@ -99,5 +152,6 @@
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWIkx73ua2NHrNFo7xRMsPjwYtoaBYLro&callback=initMap"></script>
 </body>
 </html>
