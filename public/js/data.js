@@ -713,7 +713,7 @@ export const data = [
         name: "Gálfi Béla Gyógyító és Rehabilitációs Nonprofit Kft. Pszichiátriai Szakkórház II. Addiktológiai Osztály",
         phoneNumber: "(26) 525-620 ",
         zipCode: 2013,
-        city: "Pomáz-Kiskovácsi 311",
+        city: "Pomáz-Kiskovácsi",
         referral: "beutaló szükséges",
         targetGroup: "felnőtt",
         website: "http://www.galfi.hu/page/kapcsolat/elerhetosegek"

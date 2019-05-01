@@ -18,5 +18,6 @@ function initMapWithPosition(position) {
         document.getElementById('map'),
         {zoom: 10, center: position}
     );
+    window.map = map;
     const marker = new google.maps.Marker({position, map});
 }

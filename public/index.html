@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/main.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139229769-2"></script>
     <script src="js/init-analytics.js"></script>
-
+    <script type="module" src="js/main.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-primary" id="navbar">
@@ -58,16 +58,20 @@
                 <div id="filterSection" class="collapse show" aria-labelledby="filterSectionHeading"
                      data-parent="#accordion">
                     <div class="card-body">
-                        <div class="form-group py-0 px-4">
+                        <form class="form-group py-0 px-4" id="filterForm">
+                            <label class="col-form-label pb-0 px-2" for="citySelector">Település:</label>
+                            <select class="form-control custom-select px-2 font-weight-bold" id="citySelector">
+                                <option value="0">Mind</option>
+                            </select>
                             <label class="col-form-label pb-0 px-2" for="serviceArea">Ellátási körzet:</label>
-                            <select class="form-control custom-select px-2 font-weight-bold" id="serviceArea">
+                            <select class="form-control custom-select px-2 font-weight-bold" id="serviceArea" disabled>
                                 <option value="0">Mind</option>
                                 <option value="1">Helyi</option>
                                 <option value="2">Területi</option>
                                 <option value="3">Országos</option>
                             </select>
                             <label class="col-form-label pb-0 px-2" for="careType">Ellátási forma:</label>
-                            <select class="form-control custom-select px-2 font-weight-bold" id="careType">
+                            <select class="form-control custom-select px-2 font-weight-bold" id="careType" disabled>
                                 <option value="0">Mind</option>
                                 <option value="1">Pszichiátriai gondozó</option>
                                 <option value="2">Pszichiátriai ambulancia</option>
@@ -77,7 +81,7 @@
                                 <option value="6">Krízisintervenciós osztály</option>
                             </select>
                             <label class="col-form-label pb-0 px-2" for="targetGroup">Célcsoport:</label>
-                            <select class="form-control custom-select px-2 font-weight-bold" id="targetGroup">
+                            <select class="form-control custom-select px-2 font-weight-bold" id="targetGroup" disabled>
                                 <option value="0">Mind</option>
                                 <option value="1">Gyermek</option>
                                 <option value="2">Kamasz és serdülő</option>
@@ -86,33 +90,35 @@
                                 <option value="5">Időskorúak</option>
                             </select>
                             <label class="col-form-label pb-0 px-2" for="financing">Finanszírozás:</label>
-                            <select class="form-control custom-select px-2 font-weight-bold" id="financing">
+                            <select class="form-control custom-select px-2 font-weight-bold" id="financing" disabled>
                                 <option value="0">Mind</option>
                                 <option value="1">Állami</option>
                                 <option value="2">Önköltséges</option>
                             </select>
                             <div class="custom-control custom-checkbox my-4 mx-2">
-                                <input type="checkbox" class="custom-control-input" id="referral">
+                                <input type="checkbox" class="custom-control-input" id="referral" disabled>
                                 <label class="custom-control-label" for="referral">Nem beutalóköteles</label>
                             </div>
                             <div class="custom-control custom-checkbox my-4 mx-2">
-                                <input type="checkbox" class="custom-control-input" id="alwaysOpen">
+                                <input type="checkbox" class="custom-control-input" id="alwaysOpen" disabled>
                                 <label class="custom-control-label" for="alwaysOpen">Ügyelet</label>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
             <div class="card bg-light m-2">
                 <div class="card-header" id="resultsSectionHeading">
                     <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" style="text-decoration: none" data-toggle="collapse" data-target="#resultsSection"
+                        <button class="btn btn-link collapsed" style="text-decoration: none" data-toggle="collapse"
+                                data-target="#resultsSection"
                                 aria-expanded="false" aria-controls="resultsSection">
                             Találatok
                         </button>
                     </h5>
                 </div>
-                <div id="resultsSection" class="collapse" aria-labelledby="resultsSectionHeading" data-parent="#accordion">
+                <div id="resultsSection" class="collapse" aria-labelledby="resultsSectionHeading"
+                     data-parent="#accordion">
                     <div class="card-body" id="results"></div>
                 </div>
             </div>
@@ -128,7 +134,6 @@
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/init-map.js"></script>
-<script type="module" src="js/main.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWIkx73ua2NHrNFo7xRMsPjwYtoaBYLro&callback=initMap"></script>
 </body>
