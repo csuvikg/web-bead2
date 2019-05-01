@@ -18,35 +18,23 @@
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139229769-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+    <script src="js/init-analytics.js"></script>
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-        gtag('config', 'UA-139229769-2');
-    </script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-md navbar-dark bg-primary" id="navbar">
     <div class="navbar-brand fas fa-heartbeat pl-3"></div>
-    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01"
-            aria-controls="navbarColor01" aria-expanded="false" aria-label="Navigációs sáv nyitása-csukása">
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#topNavbar"
+            aria-controls="topNavbar" aria-expanded="false" aria-label="Navigációs sáv nyitása-csukása">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-collapse collapse" id="navbarColor01" style="">
-        <form class="form-inline my-2 my-lg-0 col-sm-12 col-md-8">
-            <input class="form-control mr-sm-4 col-sm-12 col-md-8" type="text" placeholder="Keresés saját cím alapján">
-            <button class="btn btn-secondary my-2" type="submit">Keresés</button>
-        </form>
+    <div class="navbar-collapse collapse" id="topNavbar" style="">
         <ul class="navbar-nav pl-3">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Kereső<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.html">Kereső<span class="sr-only">(jelenlegi)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Infóbázis</a>
+                <a class="nav-link" href="infobase.html">Infóbázis</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Intézmény ajánlása</a>
@@ -57,101 +45,91 @@
 
 <div class="container-fluid">
     <div class="row">
-        <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="jumbotron-fluid col-sm-12 col-md-7 col-lg-6 col-xl-5">
-            <button class="btn btn-primary mt-4 mb-0 mx-4" type="button" data-toggle="collapse" data-target="#filter" aria-expanded="false" aria-controls="filter">
-                Szűrők
-            </button>
-            <div class="form-group py-0 px-4 collapse" id="filter">
-                <label class="col-form-label pb-0 px-2" for="serviceArea">Ellátási körzet:</label>
-                <select class="form-control custom-select px-2 font-weight-bold" id="serviceArea">
-                    <option value="0">Mind</option>
-                    <option value="1">Helyi</option>
-                    <option value="2">Területi</option>
-                    <option value="3">Országos</option>
-                </select>
-                <label class="col-form-label pb-0 px-2" for="careType">Ellátási forma:</label>
-                <select class="form-control custom-select px-2 font-weight-bold" id="careType">
-                    <option value="0">Mind</option>
-                    <option value="1">Pszichiátriai gondozó</option>
-                    <option value="2">Pszichiátriai ambulancia</option>
-                    <option value="3">Pszichiátriai fekvőbeteg ellátás</option>
-                    <option value="4">Családsegítő szolgálat</option>
-                    <option value="5">Nevelési tanácsadó</option>
-                    <option value="6">Krízisintervenciós osztály</option>
-                </select>
-                <label class="col-form-label pb-0 px-2" for="targetGroup">Célcsoport:</label>
-                <select class="form-control custom-select px-2 font-weight-bold" id="targetGroup">
-                    <option value="0">Mind</option>
-                    <option value="1">Gyermek</option>
-                    <option value="2">Kamasz és serdülő</option>
-                    <option value="3">Felnőtt</option>
-                    <option value="4">Pár- és család</option>
-                    <option value="5">Időskorúak</option>
-                </select>
-                <label class="col-form-label pb-0 px-2" for="financing">Finanszírozás:</label>
-                <select class="form-control custom-select px-2 font-weight-bold" id="financing">
-                    <option value="0">Mind</option>
-                    <option value="1">Állami</option>
-                    <option value="2">Önköltséges</option>
-                </select>
-                <div class="custom-control custom-checkbox my-4 mx-2">
-                    <input type="checkbox" class="custom-control-input" id="referral">
-                    <label class="custom-control-label" for="referral">Nem beutalóköteles</label>
+        <div id="accordion" class="p-0 col-sm-12 col-md-7 col-lg-6 col-xl-5">
+            <div class="card bg-light m-2">
+                <div class="card-header" id="filterSectionHeading">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" style="text-decoration: none" data-toggle="collapse"
+                                data-target="#filterSection" aria-expanded="true" aria-controls="filterSection">
+                            Szűrők
+                        </button>
+                    </h5>
                 </div>
-                <div class="custom-control custom-checkbox my-4 mx-2">
-                    <input type="checkbox" class="custom-control-input" id="alwaysOpen">
-                    <label class="custom-control-label" for="alwaysOpen">Ügyelet</label>
+                <div id="filterSection" class="collapse show" aria-labelledby="filterSectionHeading"
+                     data-parent="#accordion">
+                    <div class="card-body">
+                        <div class="form-group py-0 px-4">
+                            <label class="col-form-label pb-0 px-2" for="serviceArea">Ellátási körzet:</label>
+                            <select class="form-control custom-select px-2 font-weight-bold" id="serviceArea">
+                                <option value="0">Mind</option>
+                                <option value="1">Helyi</option>
+                                <option value="2">Területi</option>
+                                <option value="3">Országos</option>
+                            </select>
+                            <label class="col-form-label pb-0 px-2" for="careType">Ellátási forma:</label>
+                            <select class="form-control custom-select px-2 font-weight-bold" id="careType">
+                                <option value="0">Mind</option>
+                                <option value="1">Pszichiátriai gondozó</option>
+                                <option value="2">Pszichiátriai ambulancia</option>
+                                <option value="3">Pszichiátriai fekvőbeteg ellátás</option>
+                                <option value="4">Családsegítő szolgálat</option>
+                                <option value="5">Nevelési tanácsadó</option>
+                                <option value="6">Krízisintervenciós osztály</option>
+                            </select>
+                            <label class="col-form-label pb-0 px-2" for="targetGroup">Célcsoport:</label>
+                            <select class="form-control custom-select px-2 font-weight-bold" id="targetGroup">
+                                <option value="0">Mind</option>
+                                <option value="1">Gyermek</option>
+                                <option value="2">Kamasz és serdülő</option>
+                                <option value="3">Felnőtt</option>
+                                <option value="4">Pár- és család</option>
+                                <option value="5">Időskorúak</option>
+                            </select>
+                            <label class="col-form-label pb-0 px-2" for="financing">Finanszírozás:</label>
+                            <select class="form-control custom-select px-2 font-weight-bold" id="financing">
+                                <option value="0">Mind</option>
+                                <option value="1">Állami</option>
+                                <option value="2">Önköltséges</option>
+                            </select>
+                            <div class="custom-control custom-checkbox my-4 mx-2">
+                                <input type="checkbox" class="custom-control-input" id="referral">
+                                <label class="custom-control-label" for="referral">Nem beutalóköteles</label>
+                            </div>
+                            <div class="custom-control custom-checkbox my-4 mx-2">
+                                <input type="checkbox" class="custom-control-input" id="alwaysOpen">
+                                <label class="custom-control-label" for="alwaysOpen">Ügyelet</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="container p-4">
-                <h2>71 Találat</h2>
-                <p>Készülőben</p>
+            <div class="card bg-light m-2">
+                <div class="card-header" id="resultsSectionHeading">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" style="text-decoration: none" data-toggle="collapse" data-target="#resultsSection"
+                                aria-expanded="false" aria-controls="resultsSection">
+                            Találatok
+                        </button>
+                    </h5>
+                </div>
+                <div id="resultsSection" class="collapse" aria-labelledby="resultsSectionHeading" data-parent="#accordion">
+                    <div class="card-body" id="results"></div>
+                </div>
             </div>
         </div>
-
         <div class="embed-responsive col-sm-12 col-md-5 col-lg-6 col-xl-7">
             <div id="map" class="embed-responsive-item"></div>
         </div>
     </div>
 </div>
-
-<div class="container pt-5">
-    <!-- Example row of columns -->
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
-                euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
-                euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula
-                porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-                fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-    </div>
-    <footer>
-        <hr>
-        <p>&copy; csuvikg 2019</p>
-    </footer>
-</div> <!-- /container -->
 <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
 <script src="js/init-firebase.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
 <script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWIkx73ua2NHrNFo7xRMsPjwYtoaBYLro&callback=initMap"></script>
+<script src="js/init-map.js"></script>
+<script type="module" src="js/main.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWIkx73ua2NHrNFo7xRMsPjwYtoaBYLro&callback=initMap"></script>
 </body>
 </html>
