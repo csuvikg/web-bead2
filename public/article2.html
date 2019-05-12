@@ -19,11 +19,38 @@
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139229769-2"></script>
     <script src="js/init-analytics.js"></script>
-</head>Ł
+</head>
 <body>
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary" id="navbar">
+    <div class="navbar-brand fas fa-heartbeat pl-3"></div>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#topNavbar"
+            aria-controls="topNavbar" aria-expanded="false" aria-label="Navigációs sáv nyitása-csukása">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="topNavbar" style="">
+        <ul class="navbar-nav pl-3">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Kereső</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="infobase.html">Infóbázis<span class="sr-only">(jelenlegi)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Intézmény ajánlása</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container pt-5">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/public/infobase.html">Infóbázis</a></li>
+        <li class="breadcrumb-item"><a href="infobase.html">Infóbázis</a></li>
         <li class="breadcrumb-item active">Az ezerarcú depresszió</li>
     </ol>
+
+    <footer>
+        <hr>
+        <p>&copy; csuvikg 2019</p>
+    </footer>
+</div>
 </body>
 </html>
