@@ -41,6 +41,77 @@
         </ul>
     </div>
 </nav>
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-12 col-lg-6 p-4">
+            <h2>Intézmény ajánlása</h2>
+            <form class="form-group" action="mailto:gaborcsuvik@gmail.com" method="post" enctype="text/plain">
+                <label class="col-form-label pb-0 px-2" for="name">Név:</label>
+                <input type="text" class="form-control px-2 font-weight-bold" id="name">
+                <label class="col-form-label pb-0 px-2" for="zipCode">Irányítószám:</label>
+                <input type="text" pattern="[0-9]{4}" class="form-control px-2 font-weight-bold" id="zipCode">
+                <label class="col-form-label pb-0 px-2" for="city">Település:</label>
+                <input type="text" class="form-control px-2 font-weight-bold" id="city">
+                <label class="col-form-label pb-0 px-2" for="address">Utca, házszám:</label>
+                <input type="text" class="form-control px-2 font-weight-bold" id="address">
+                <label class="col-form-label pb-0 px-2" for="phone">Telefonszám:</label>
+                <input type="text" class="form-control px-2 font-weight-bold" id="phone">
+                <label class="col-form-label pb-0 px-2" for="website">Honlap:</label>
+                <input type="text" class="form-control px-2 font-weight-bold" id="website">
+                <label class="col-form-label pb-0 px-2" for="serviceArea">Ellátási körzet:</label>
+                <select class="form-control custom-select px-2 font-weight-bold" id="serviceArea">
+                    <option value="0">-</option>
+                    <option value="1">Helyi</option>
+                    <option value="2">Területi</option>
+                    <option value="3">Országos</option>
+                </select>
+                <label class="col-form-label pb-0 px-2" for="careType">Ellátási forma:</label>
+                <select class="form-control custom-select px-2 font-weight-bold" id="careType">
+                    <option value="0">-</option>
+                    <option value="1">Pszichiátriai gondozó</option>
+                    <option value="2">Pszichiátriai ambulancia</option>
+                    <option value="3">Pszichiátriai fekvőbeteg ellátás</option>
+                    <option value="4">Családsegítő szolgálat</option>
+                    <option value="5">Nevelési tanácsadó</option>
+                    <option value="6">Krízisintervenciós osztály</option>
+                </select>
+                <label class="col-form-label pb-0 px-2" for="targetGroup">Célcsoport:</label>
+                <select class="form-control custom-select px-2 font-weight-bold" id="targetGroup">
+                    <option value="0">-</option>
+                    <option value="1">Gyermek</option>
+                    <option value="2">Kamasz és serdülő</option>
+                    <option value="3">Felnőtt</option>
+                    <option value="4">Pár- és család</option>
+                    <option value="5">Időskorúak</option>
+                </select>
+                <label class="col-form-label pb-0 px-2" for="financing">Finanszírozás:</label>
+                <select class="form-control custom-select px-2 font-weight-bold" id="financing">
+                    <option value="0">-</option>
+                    <option value="1">Állami</option>
+                    <option value="2">Önköltséges</option>
+                </select>
+                <div class="custom-control custom-checkbox my-4 mx-2">
+                    <input type="checkbox" class="custom-control-input" id="referral">
+                    <label class="custom-control-label" for="referral">Nem beutalóköteles</label>
+                </div>
+                <div class="custom-control custom-checkbox my-4 mx-2">
+                    <input type="checkbox" class="custom-control-input" id="alwaysOpen">
+                    <label class="custom-control-label" for="alwaysOpen">Ügyelet</label>
+                </div>
+                <label class="col-form-label pb-0 px-2" for="other">Megjegyzések (várakozási idő, rendelési idő, egyéb):</label>
+                <textarea class="form-control" rows="5" id="other"></textarea>
+                <button type="submit" class="btn btn-primary my-4 mx-2">Elküldés</button>
+                <button type="button" class="btn btn-secondary my-4 mx-2" onclick="location.reload()">Töröl</button>
+            </form>
+        </div>
+        <div class="col-6 d-none d-lg-block imageBg">
+        </div>
+    </div>
+    <footer>
+        <hr>
+        <p>&copy; csuvikg 2019</p>
+    </footer>
+</div>
 
 </body>
 </html>
