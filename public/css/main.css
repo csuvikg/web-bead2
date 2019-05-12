@@ -19,3 +19,10 @@
     display: block;
     object-fit: cover;
 }
+
+#error404 {
+    position: absolute;
+    width: 20rem;
+    top: calc(50% - 10rem);
+    left: calc(50% - 160px);
+}
