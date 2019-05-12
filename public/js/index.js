@@ -6,7 +6,26 @@ function loadResultsFromData(data) {
 
     for (let [index, item] of data.entries()) {
         container.innerHTML += `<div class="card mb-1">
-  <h5 class="card-header" style="cursor: pointer" id="resultHeader${index}" data-toggle="collapse" data-target="#result${index}" aria-expanded="false" aria-controls="result${index}">
+  <h5 class="card-header"
+   style="cursor: pointer" id="resultHeader${index}"
+   data-toggle="collapse"
+   data-target="#result${index}"
+   aria-expanded="false"
+   aria-controls="result${index}"
+   onclick="if (window.map && window.geocoder) {
+            geocoder.geocode({
+                'address': '${item.city}, ${item.address}, Magyarország'
+            }, (results, status) => {
+                if (status === 'OK') {
+                    const position = results[0].geometry.location;
+                    const map = window.map;
+                    map.setCenter(position);
+                    const marker = new google.maps.Marker({position, map});
+                } else {
+                    console.log('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+        }">
     ${item.name} (${item.city})
   </h5>
   <div id="result${index}" class="collapse" aria-labelledby="resultHeader${index}" data-parent="#results">
@@ -71,6 +90,8 @@ function handleCityChange(city) {
             }
         });
     }
+
+    $('#resultsSection').collapse('show');
 }
 
 $('#citySelector').change(function () {

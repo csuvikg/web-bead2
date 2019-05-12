@@ -12,3 +12,10 @@
         overflow: auto;
     }
 }
+
+.card-image {
+    height: 200px;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}

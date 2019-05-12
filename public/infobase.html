@@ -2,7 +2,7 @@
 <html lang="hu">
 <head>
     <meta charset="utf-8">
-    <title>Pszi-Infó | Főoldal</title>
+    <title>Pszi-Infó | Infóbázis</title>
     <meta name="description" content="Állami finanszírozású pszichiátriai és klinikai pszichológiai ellátások keresője">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -14,15 +14,14 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139229769-2"></script>
     <script src="js/init-analytics.js"></script>
-
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary" id="navbar">
     <div class="navbar-brand fas fa-heartbeat pl-3"></div>
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#topNavbar"
             aria-controls="topNavbar" aria-expanded="false" aria-label="Navigációs sáv nyitása-csukása">
@@ -43,42 +42,48 @@
     </div>
 </nav>
 <div class="container pt-5">
-    <!-- Example row of columns -->
     <div class="row">
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
-                euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        <div class="card col-md-4 p-0 mx-3 my-2">
+            <h3 class="card-header">Hogyan válasszunk terapeutát?</h3>
+            <img class="card-image" src="img/client-therapist.jpg" alt="Kliens és terapeuta egyéni ülésen">
+            <div class="card-body">
+                <p class="card-text">Pszichiátert vagy pszichológust válasszak? Ki a pszichoterapeuta? Mikor jön szóba a
+                    gyógyszer? Milyen a jó terapeuta, s milyen a rossz?</p>
+                <a href="article1.xhtml" class="card-link btn btn-primary">Megnyitás</a>
+            </div>
+            <div class="card-footer text-muted">
+                <p>Forrás:
+                    <span><a href="http://www.pszichostudio.hu/hogyan.php" rel="noopener noreferrer"
+                             target="_blank">pszichostudio.hu</a></span>
+                </p>
+            </div>
         </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
-                euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula
-                porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-                fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        <div class="card col-md-4 p-0 mx-3 my-2">
+            <h3 class="card-header">Az ezerarcú depresszió</h3>
+            <img class="card-image" src="img/despair-small.jpg" alt="Kliens és terapeuta egyéni ülésen">
+            <div class="card-body">
+                <p class="card-text">Az utóbbi években a pszichés betegségek közül a depresszióról olvashattunk
+                    legtöbbet, fogalma bevonult a köztudatba. A szomorúság, boldogtalanság a normális emberi természet
+                    velejárója. Megkülönböztetni a betegségtől nem egyszerű feladat.</p>
+                <a href="article2.html" class="card-link btn btn-primary">Megnyitás</a>
+            </div>
+            <div class="card-footer text-muted">
+                <p>Forrás:
+                    <span><a href="http://www.pszichostudio.hu/depresszio.php" rel="noopener noreferrer"
+                             target="_blank">pszichostudio.hu</a></span>
+                </p>
+            </div>
         </div>
     </div>
     <footer>
         <hr>
         <p>&copy; csuvikg 2019</p>
     </footer>
-</div> <!-- /container -->
+</div>
 <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
 <script src="js/init-firebase.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
 <script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWIkx73ua2NHrNFo7xRMsPjwYtoaBYLro&callback=initMap"></script>
 </body>
 </html>
