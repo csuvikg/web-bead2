@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 #mapContainer {
     min-height: 400px;
 }
@@ -31,7 +35,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 100%;
+    max-width: 100%;
     max-height: 400px;
 }
 
@@ -39,8 +43,14 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    max-height: 100%;
     max-width: 400px;
+}
+
+@media screen and (max-width: 768px) {
+    .horizontalImage {
+        max-width: 100%;
+    }
 }
 
 .video {
@@ -80,4 +90,36 @@ a.skip-main:focus, a.skip-main:active {
     text-align: center;
     font-size: 1.2em;
     z-index: 999;
+}
+
+#landing {
+    color: #222222;
+    padding-top: 15vh;
+    background-image: linear-gradient(to bottom, #eeeeee , #2196F3);
+    width: 100%;
+    height: 100vh;
+}
+
+#landing * {
+    font-weight: normal;
+}
+
+#landingContent {
+    background: none;
+    max-width: 500px;
+    height: 85vh;
+}
+
+#landingImageContainer {
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 45%;
+    max-height: 90%;
+    border-bottom-left-radius: 90%;
+    border-top-left-radius: 50%;
+    border-left: solid 10px #eeeeee;
+    border-bottom: solid 15px #eeeeee;
+    box-shadow: 5px 10px #222222;
+    overflow: hidden;
 }

@@ -97,3 +97,55 @@ function handleCityChange(city) {
 $('#citySelector').change(function () {
     handleCityChange($(this).val());
 });
+
+function createLanding() {
+    const seenLanding = sessionStorage.getItem("seenLanding");
+    if (seenLanding == null || seenLanding !== "true") {
+        $('#landingContainer').append(`<div id="landing" class="clearfix">
+    <div class="jumbotron clearfix px-3 p-sm-5" id="landingContent">
+        <h1 class="display-3">Üdvözlet!</h1>
+        <p class="lead">Ez a <strong>pszi-infó</strong>, a társadalombiztosítás (TB) által finanszírozott
+            pszichiátriai és pszichoterápiás ellátások országos keresője
+        </p>
+        <hr class="my-4">
+        <p class="lead">Az ellátótérképen és intézménykeresőn túl információs portál is olvasható, valamint
+            lehetőség van az adatbázisban nem szereplő intézmények ajánlására is</p>
+        <p class="lead">
+            <button id="landingButton" class="btn btn-secondary btn-lg my-4" role="button">Tovább</button>
+        </p>
+    </div>
+    <div id="landingImageContainer" class="d-none d-md-block">
+        <picture id="landingImage">
+            <source media="(min-width: 1920px)"
+                    srcset="img/adult-career-clipboard-1920.jpg">
+            <source media="(min-width: 1280px)"
+                    srcset="img/adult-career-clipboard-1280.jpg">
+            <img src="img/adult-career-clipboard-640.jpg"
+                 alt="Orvos">
+        </picture>
+    </div>
+</div>`);
+        window.scrollTo(0, 0);
+        sessionStorage.setItem("seenLanding", "false");
+    }
+}
+
+createLanding();
+
+$('#landingButton').click(function () {
+    window.scrollTo(0, document.body.scrollHeight);
+    setTimeout(function () {
+        sessionStorage.setItem("seenLanding", "true");
+        $('#landingContainer').remove();
+    }, 1000);
+});
+
+$(window).scroll(function () {
+    const seenLanding = sessionStorage.getItem("seenLanding");
+    if (seenLanding != null || seenLanding === "false") {
+        if ($(window).scrollTop() + $(window).height() + 1 >= $(document).height()) {
+            sessionStorage.setItem("seenLanding", "true");
+            $('#landingContainer').remove();
+        }
+    }
+});
