@@ -75,6 +75,15 @@
                     <option value="5">Nevelési tanácsadó</option>
                     <option value="6">Krízisintervenciós osztály</option>
                 </select>
+                <label class="col-form-label pb-0 px-2">Finanszírozás:</label>
+                <div class="custom-control custom-radio m-2">
+                    <input type="radio" id="financing1" name="financing" class="custom-control-input" checked>
+                    <label class="custom-control-label" for="financing1">Állami</label>
+                </div>
+                <div class="custom-control custom-radio m-2">
+                    <input type="radio" id="financing2" name="financing" class="custom-control-input">
+                    <label class="custom-control-label" for="financing2">Önköltséges</label>
+                </div>
                 <label class="col-form-label pb-0 px-2" for="targetGroup">Célcsoport:</label>
                 <select class="form-control custom-select px-2 font-weight-bold" id="targetGroup">
                     <option value="0">-</option>
@@ -84,12 +93,6 @@
                     <option value="4">Pár- és család</option>
                     <option value="5">Időskorúak</option>
                 </select>
-                <label class="col-form-label pb-0 px-2" for="financing">Finanszírozás:</label>
-                <select class="form-control custom-select px-2 font-weight-bold" id="financing">
-                    <option value="0">-</option>
-                    <option value="1">Állami</option>
-                    <option value="2">Önköltséges</option>
-                </select>
                 <div class="custom-control custom-checkbox my-4 mx-2">
                     <input type="checkbox" class="custom-control-input" id="referral">
                     <label class="custom-control-label" for="referral">Nem beutalóköteles</label>
@@ -98,10 +101,11 @@
                     <input type="checkbox" class="custom-control-input" id="alwaysOpen">
                     <label class="custom-control-label" for="alwaysOpen">Ügyelet</label>
                 </div>
-                <label class="col-form-label pb-0 px-2" for="other">Megjegyzések (várakozási idő, rendelési idő, egyéb):</label>
+                <label class="col-form-label pb-0 px-2" for="other">Megjegyzések (várakozási idő, rendelési idő,
+                    egyéb):</label>
                 <textarea class="form-control" rows="5" id="other"></textarea>
                 <button type="submit" class="btn btn-primary my-4 mx-2">Elküldés</button>
-                <button type="button" class="btn btn-secondary my-4 mx-2" onclick="location.reload()">Töröl</button>
+                <button type="button" class="btn btn-secondary my-4 mx-2" onclick="location.reload()">Törlés</button>
             </form>
         </div>
         <div class="col-6 d-none d-lg-block imageBg">
@@ -112,6 +116,10 @@
         <p>&copy; csuvikg 2019</p>
     </footer>
 </div>
-
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+<script src="js/init-firebase.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+<script src="js/vendor/bootstrap.min.js"></script>
 </body>
 </html>
