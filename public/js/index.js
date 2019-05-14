@@ -111,41 +111,17 @@ function createLanding() {
         <p class="lead">Az ellátótérképen és intézménykeresőn túl információs portál is olvasható, valamint
             lehetőség van az adatbázisban nem szereplő intézmények ajánlására is</p>
         <p class="lead">
-            <button id="landingButton" class="btn btn-secondary btn-lg my-4" role="button">Tovább</button>
+            <button id="landingButton" class="btn btn-primary btn-lg my-4" role="button">Tovább</button>
         </p>
     </div>
-    <div id="landingImageContainer" class="d-none d-md-block">
-        <picture id="landingImage">
-            <source media="(min-width: 1920px)"
-                    srcset="img/adult-career-clipboard-1920.jpg">
-            <source media="(min-width: 1280px)"
-                    srcset="img/adult-career-clipboard-1280.jpg">
-            <img src="img/adult-career-clipboard-640.jpg"
-                 alt="Orvos">
-        </picture>
-    </div>
 </div>`);
-        window.scrollTo(0, 0);
-        sessionStorage.setItem("seenLanding", "false");
+        sessionStorage.setItem("closedLanding", "false");
     }
 }
 
 createLanding();
 
 $('#landingButton').click(function () {
-    window.scrollTo(0, document.body.scrollHeight);
-    setTimeout(function () {
-        sessionStorage.setItem("seenLanding", "true");
-        $('#landingContainer').remove();
-    }, 1000);
-});
-
-$(window).scroll(function () {
-    const seenLanding = sessionStorage.getItem("seenLanding");
-    if (seenLanding != null || seenLanding === "false") {
-        if ($(window).scrollTop() + $(window).height() + 1 >= $(document).height()) {
-            sessionStorage.setItem("seenLanding", "true");
-            $('#landingContainer').remove();
-        }
-    }
+    sessionStorage.setItem("closedLanding", "true");
+    $('#landingContainer').remove();
 });
